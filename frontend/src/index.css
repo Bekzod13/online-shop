@@ -17,6 +17,7 @@ a{
     padding: 10px;
 }
 :root{
+    --orange: #EB8528;
     --white: #fff;
     --black: #1E1E1E;
     --light-gray: #ECF4FF;
@@ -28,6 +29,7 @@ body{
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
     font-weight: 600;
+    background: var(--light-gray);
 }
 
 /* navbar */
@@ -40,6 +42,7 @@ nav{
     left: 0;
     right: 0;
     z-index: 100;
+    background: var(--white);
 }
 .navbar-free{
     height: 70px;
@@ -50,6 +53,70 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+.catalog-data{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 100%;
+    background: var(--white);
+    width: 100%;
+    height: calc(700px - 70px);
+    box-shadow: 0 0 4px 2px var(--light-gray);
+}
+.catalog-data.none{
+    display: none;
+}
+.nav-sidebar{
+    width: 290px;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0 20px 40px;
+}
+.nav-side-item{
+    width: 100%;
+    height: 41px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+}
+.nav-side-item.active{
+    width: 100%;
+    height: 41px;
+    background: var(--white);
+}
+.nav-body{
+    width: calc(100% - 290px);
+    /* height: 100%; */
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.nav-body-item{
+    height: 50px;
+    width: 25%;
+    min-width: 200px;
+    color: var(--black);
+    display: flex;
+}
+.nav-sidebar::after{
+    content: "";
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    z-index: -1;
+    opacity: .3;
 }
 .nav-left,
 .nav-middle,
@@ -75,7 +142,10 @@ header{
 }
 .nav-catalog-btn:hover,
 .nav-search-btn:hover,
-.nav-btn:hover{
+.nav-btn:hover,
+.banner-arrow:hover,
+.catalog-product-btn:hover,
+.catalog-actions span:hover{
     opacity: .8;
     cursor: pointer;
 }
@@ -139,4 +209,200 @@ header{
     background: var(--gradient);
     z-index: -1;
     opacity: .5;
+}
+
+
+/* banner */
+.banner-main{
+    height: 100%;
+}
+.slick-list,
+.slick-track,
+.slick-slide,
+.slick-slide div {
+    height: 100% !important;
+}
+.banner-slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 40px 60px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.bg-banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.bg-banner img{
+    width: 100%;
+    height: 100%;
+}
+.banner-slide
+{
+    color: var(--white);
+}
+.banner-slide h1
+{
+    font-size: 50px;
+    width: 40%;
+}
+.banner-slide p
+{
+    font-size: 20px;
+    width: 40%;
+}
+.banner-arrow{
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: var(--white);
+    font-size: 20px;
+}
+.banner-arrow-left{
+    left: -60px;
+}
+.banner-arrow-right{
+    right: -60px;
+}
+.slick-dots li{
+    opacity: .5;
+}
+.slick-dots li.slick-active{
+    opacity: 1;
+}
+.banner-dot{
+    position: relative;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient);
+    border-radius: 50%;
+}
+/* title */
+.title{
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: 600;
+}
+/* catalog */
+.catalog{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.catalog-product{
+    flex: 1;
+    width: 18%;
+    min-width: 200px;
+    background: var(--white);
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+.catalog-product-img{
+    padding-top: 20px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.catalog-product-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.catalog-product-price{
+    margin: 10px 0;
+    font-size: 20px;
+    color: var(--blue);
+}
+.catalog-product-name{
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.catalog-product-quantity{
+    color: var(--gray);
+}
+.catalog-actions{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    align-items: center;
+}
+.catalog-product-btn{
+    height: 100%;
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 10px;
+}
+.catalog-actions span{
+    height: 100%;
+    width:  40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+.catalog-product-like-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: var(--gray);
+    cursor: pointer;
+}
+.catalog-product-like-btn.active{
+    color: #f00;
+}
+.catalog-product-tags{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.catalog-product-tag{
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px 10px;
+    background: var(--orange);
+    color: var(--white);
+}
+.catalog-product-tag.new{
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 5px 10px;
+    background: #f00;
+    color: var(--white);
+}
+.catalog-show-all{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--black);
 }
