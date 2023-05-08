@@ -406,3 +406,34 @@ header{
     background: var(--white);
     color: var(--black);
 }
+/* categories */
+.category-title{
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.category{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+.category-item{
+    flex: 1;
+    height: 290px;
+    min-width: 250px;
+    background: var(--white);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.category-item span{
+    color: var(--gray);
+}
+.category-item p{
+    color: var(--black);
+    font-size: 16px;
+    margin-top: 10px;
+}

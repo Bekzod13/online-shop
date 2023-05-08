@@ -1,9 +1,9 @@
 import Banner from '../components/Banner';
+import Catalog from '../components/Catalog';
 
 
 // import images
 import img from '../assets/catalog/img.png';
-import Catalog from '../components/Catalog';
 
 
 const Home = () => {

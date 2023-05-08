@@ -11,8 +11,8 @@ import { useState } from "react";
 
 const Navbar = () => {
 
-    const [catalog, setCatalog] = useState(true);
-    const [select, setSelect] = useState(null);
+    const [catalog, setCatalog] = useState(false);
+    const [select, setSelect] = useState(1);
 
   return (
     <>
