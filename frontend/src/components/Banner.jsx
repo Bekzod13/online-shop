@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {TfiAngleRight, TfiAngleLeft} from 'react-icons/tfi';
 
 const Banner = ({data, height}) => {
+  console.log('olma');
     const settings = {
         customPaging: function(i) {
             return (
